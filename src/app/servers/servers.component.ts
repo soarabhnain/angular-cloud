@@ -13,8 +13,8 @@ export class ServersComponent implements OnInit {
   serverName = 'test';
   serverCreated = false;
   servers = ['Testserver', 'TestServer 2'];
-  showDetails = true;
-  clickCount = [];
+  showDetails = false;
+  log = [];
 
   constructor() {
     setTimeout( () => {
@@ -36,12 +36,9 @@ export class ServersComponent implements OnInit {
   }
 
   toggleDetails(){
-    if(this.showDetails){
-      this.showDetails = false;
-    } else{
-      this.showDetails = true;
-    }
-    this.clickCount.push("clicked");
+    this.showDetails = !this.showDetails;
+    this.log.push(new Date());
   }
+
 
 }
